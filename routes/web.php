@@ -20,9 +20,9 @@ use App\Http\Controllers\Auth\AuthController;
 
 Route::get('/login','App\Http\Controllers\Auth\AuthController@index')->name('login');
 Route::post('post-login','App\Http\Controllers\Auth\AuthController@postLogin')->name('login.post');
+
 Route::get('/dashboard','App\Http\Controllers\Auth\AuthController@dashboard');
 Route::get('/logout','App\Http\Controllers\Auth\AuthController@logout')->name('logout');
 
 /* Auction Route */
 
-Route::view('/add','add');	

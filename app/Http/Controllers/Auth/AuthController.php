@@ -16,8 +16,8 @@ class AuthController extends Controller
     {
         return view('auth.login');
     }  
-    
-    public function postLogin(Request $request)
+
+   public function postLogin(Request $request)
     {
         $request->validate([
             'email' => 'required',
@@ -32,7 +32,7 @@ class AuthController extends Controller
   
         return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
     }
-   public function dashboard()
+    public function dashboard()
     {
         if(Auth::check()){
             return view('dashboard');
@@ -40,6 +40,9 @@ class AuthController extends Controller
   
         return redirect("login")->withSuccess('Opps! You do not have access');
     }
+    
+   
+    
     public function logout() {
         Session::flush();
         Auth::logout();

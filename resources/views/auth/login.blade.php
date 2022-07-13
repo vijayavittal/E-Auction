@@ -40,12 +40,13 @@
         <div class="login-register" style="background-image:url(../assets/images/background/login-register.jpg);">
             <div class="login-box card">
                 <div class="card-body">
-                    <form class="form-horizontal form-material" id="loginform" action="{{ route('login.post') }}" method="post"> 
+                    <form class="form-horizontal form-material"  action="{{ route('login.post') }}" method="POST"> 
                       @csrf
                         <h3 class="box-title m-b-20">Sign In</h3>
-                        <div class="form-group ">
+                        
+                        <div class="form-group">
                             <div class="col-xs-12">
-                                <input class="form-control" type="email" name="email" id="email_address" required="" placeholder="Username"> </div>
+                                <input class="form-control" type="email" name="email" id="email" required="" placeholder="Username"> </div>
                                 @if ($errors->has('email'))
                                       <span class="text-danger">{{ $errors->first('email') }}</span>
                                   @endif
